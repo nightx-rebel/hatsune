@@ -1,0 +1,25 @@
+{
+  "name": "hatsune",
+  "version": "1.0.0",
+  "description": "Multi-user WhatsApp bot with Telegram pairing UI and modular session management.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "check": "node --check src/index.js && node --check src/express-pair.js && node --check scripts/prepare-session-manager.js && node --check core/*.js && node --check lib/*.js",
+    "postinstall": "node scripts/prepare-session-manager.js"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "fs-extra": "^11.1.1",
+    "node-telegram-bot-api": "^0.66.0",
+    "wa-multi-socket": "github:nightx-rebel/wa-multi-socket#2243c6e2f8e147d6ae85fda02f248ae38b46696b"
+  }
+}
